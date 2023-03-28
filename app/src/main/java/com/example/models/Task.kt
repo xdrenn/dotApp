@@ -20,7 +20,7 @@ data class Task(
         get() = DateFormat.getDateTimeInstance().format(date)
 
     companion object {
-        val taskColors = listOf(Purple_700, Blue, Pink, Coral, LightBlue, Gray, LightGray, Yellow)
+        val taskColors = listOf(DarkRed, Green, Pink, DarkPurple, LightGray, LightPink, LightBlue, Sand)
     }
 }
 
