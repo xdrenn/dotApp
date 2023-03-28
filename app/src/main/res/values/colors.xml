@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lavender">#FFBB86FC</color>
+    <color name="blue">#5C85FF</color>
+    <color name="coral">#FF4D71</color>
+    <color name="pink">#F467B0</color>
+    <color name="yellow">#FFDB6F</color>
+    <color name="light_blue">#86FCF2</color>
+    <color name="purple_700">#673AB7</color>
+    <color name="dark_gray">#464853</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
