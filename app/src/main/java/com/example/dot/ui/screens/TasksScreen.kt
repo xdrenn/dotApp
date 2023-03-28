@@ -9,10 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -49,13 +46,14 @@ fun TasksScreen(
                 onClick = {
                           navController?.navigate(Screen.AddEditScreen.route)
                 },
-                backgroundColor = Color.DarkGray
+                backgroundColor = Color.LightGray
 
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.add_item),
                     contentDescription = "Add task",
-                    modifier = Modifier.size(20.dp)
+                    tint = Color.Black,
+                    modifier = Modifier.size(22.dp)
                 )
             }
 
@@ -74,7 +72,6 @@ fun TasksScreen(
                 IconButton(
                     onClick = {
                         viewModel.onEvent(TaskEvent.ToggleOrderSection)
-
                     })
                 {
                     Icon(
@@ -107,7 +104,8 @@ fun TasksScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                navController?.navigate(Screen.AddEditScreen.route)
+                                navController?.navigate(Screen.AddEditScreen.route +
+                                "?taskId={taskId}&taskColor={taskColor}")
                             },
 
                         onDelete = {

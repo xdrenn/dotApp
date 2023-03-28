@@ -25,7 +25,6 @@ fun TaskItem(
 ) {
    Card(modifier = modifier,
        backgroundColor = Color.Gray
-
    ) {
         Row(
             modifier = Modifier
@@ -38,10 +37,11 @@ fun TaskItem(
             Icon(
                 painter = painterResource(id = R.drawable.heart_item),
                 contentDescription = "Tag",
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(30.dp),
+                tint = Color(task.color)
             )
             Spacer(modifier = Modifier.width(5.dp))
-            Column(modifier = Modifier,
+            Column(modifier = Modifier.width(50.dp),
                horizontalAlignment = Alignment.Start
             ){
                 Text(
@@ -85,3 +85,4 @@ fun CheckBox() {
         }
     )
 }
+
