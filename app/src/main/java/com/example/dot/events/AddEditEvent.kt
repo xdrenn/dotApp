@@ -1,4 +1,4 @@
-package com.example.events
+package com.example.dot.events
 
 import androidx.compose.ui.focus.FocusState
 

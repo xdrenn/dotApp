@@ -1,7 +1,7 @@
-package com.example.events
+package com.example.dot.events
 
-import com.example.models.Task
-import com.example.utils.OrderTasks
+import com.example.dot.models.Task
+import com.example.dot.utils.OrderTasks
 
 sealed class TaskEvent{
     data class Order(val orderTasks: OrderTasks): TaskEvent()

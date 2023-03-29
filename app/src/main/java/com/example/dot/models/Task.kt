@@ -1,4 +1,4 @@
-package com.example.models
+package com.example.dot.models
 
 import android.os.Parcelable
 import androidx.room.Entity

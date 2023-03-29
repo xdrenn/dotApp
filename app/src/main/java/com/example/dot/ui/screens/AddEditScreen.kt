@@ -23,9 +23,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.dot.R
 import com.example.dot.ui.components.TransparentTextField
-import com.example.events.AddEditEvent
-import com.example.models.Task
-import com.example.viewModel.AddEditViewModel
+import com.example.dot.events.AddEditEvent
+import com.example.dot.models.Task
+import com.example.dot.viewModel.AddEditViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

@@ -1,11 +1,11 @@
-package com.example.di
+package com.example.dot.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.data.TaskDatabase
-import com.example.data.TaskRepository
-import com.example.data.TaskRepositoryImpl
-import com.example.use_cases.*
+import com.example.dot.data.TaskDatabase
+import com.example.dot.data.TaskRepository
+import com.example.dot.data.TaskRepositoryImpl
+import com.example.dot.use_cases.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

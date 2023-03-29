@@ -1,8 +1,8 @@
-package com.example.data
+package com.example.dot.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.models.Task
+import com.example.dot.models.Task
 
 @Database(entities = [Task::class], version = 1, exportSchema = false)
 abstract class TaskDatabase: RoomDatabase() {

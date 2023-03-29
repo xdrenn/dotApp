@@ -1,8 +1,8 @@
 package com.example.dot.ui.presentation
 
-import com.example.models.Task
-import com.example.utils.OrderTasks
-import com.example.utils.OrderType
+import com.example.dot.models.Task
+import com.example.dot.utils.OrderTasks
+import com.example.dot.utils.OrderType
 
 data class TasksState(
     val tasks: List<Task> = emptyList(),

@@ -1,4 +1,4 @@
-package com.example.use_cases
+package com.example.dot.use_cases
 
 class TaskUseCases (
     val getTasks: GetTasksUseCase,

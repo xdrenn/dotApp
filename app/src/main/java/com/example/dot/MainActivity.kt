@@ -14,7 +14,7 @@ import androidx.navigation.navArgument
 import com.example.dot.ui.screens.TasksScreen
 import com.example.dot.ui.screens.AddEditScreen
 import com.example.dot.ui.theme.DotTheme
-import com.example.utils.Screen
+import com.example.dot.utils.Screen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

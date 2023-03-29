@@ -1,4 +1,4 @@
-package com.example.viewModel
+package com.example.dot.viewModel
 
 
 import androidx.compose.runtime.State
@@ -8,10 +8,10 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dot.ui.presentation.TaskTextState
-import com.example.events.AddEditEvent
-import com.example.models.InvalidTaskException
-import com.example.models.Task
-import com.example.use_cases.TaskUseCases
+import com.example.dot.events.AddEditEvent
+import com.example.dot.models.InvalidTaskException
+import com.example.dot.models.Task
+import com.example.dot.use_cases.TaskUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

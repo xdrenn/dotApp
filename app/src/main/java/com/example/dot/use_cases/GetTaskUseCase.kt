@@ -1,7 +1,7 @@
-package com.example.use_cases
+package com.example.dot.use_cases
 
-import com.example.data.TaskRepository
-import com.example.models.Task
+import com.example.dot.data.TaskRepository
+import com.example.dot.models.Task
 
 class GetTaskUseCase(
     private val repository: TaskRepository

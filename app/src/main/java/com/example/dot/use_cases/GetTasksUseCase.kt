@@ -1,9 +1,9 @@
-package com.example.use_cases
+package com.example.dot.use_cases
 
-import com.example.data.TaskRepository
-import com.example.models.Task
-import com.example.utils.OrderTasks
-import com.example.utils.OrderType
+import com.example.dot.data.TaskRepository
+import com.example.dot.models.Task
+import com.example.dot.utils.OrderTasks
+import com.example.dot.utils.OrderType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

@@ -1,4 +1,4 @@
-package com.example.utils
+package com.example.dot.utils
 
 sealed class Screen(
     val route: String

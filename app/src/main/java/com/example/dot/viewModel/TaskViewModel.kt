@@ -1,15 +1,15 @@
-package com.example.viewModel
+package com.example.dot.viewModel
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dot.ui.presentation.TasksState
-import com.example.events.TaskEvent
-import com.example.models.Task
-import com.example.use_cases.TaskUseCases
-import com.example.utils.OrderTasks
-import com.example.utils.OrderType
+import com.example.dot.events.TaskEvent
+import com.example.dot.models.Task
+import com.example.dot.use_cases.TaskUseCases
+import com.example.dot.utils.OrderTasks
+import com.example.dot.utils.OrderType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn

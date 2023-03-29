@@ -24,9 +24,9 @@ import androidx.navigation.NavController
 import com.example.dot.R
 import com.example.dot.ui.components.OrderSection
 import com.example.dot.ui.components.TaskItem
-import com.example.events.TaskEvent
-import com.example.utils.Screen
-import com.example.viewModel.TaskViewModel
+import com.example.dot.events.TaskEvent
+import com.example.dot.utils.Screen
+import com.example.dot.viewModel.TaskViewModel
 import kotlinx.coroutines.launch
 
 @Preview

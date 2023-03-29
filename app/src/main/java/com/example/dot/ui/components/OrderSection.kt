@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.utils.OrderTasks
-import com.example.utils.OrderType
+import com.example.dot.utils.OrderTasks
+import com.example.dot.utils.OrderType
 
 @Composable
 fun OrderSection(
