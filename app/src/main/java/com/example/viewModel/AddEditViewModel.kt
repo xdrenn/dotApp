@@ -34,7 +34,7 @@ class AddEditViewModel @Inject constructor(
     ))
     val taskDescription: State<TaskTextState> = _taskDescription
 
-    private val _tagColor  = mutableStateOf<Int>(Task.taskColors.random().toArgb())
+    private val _tagColor  = mutableStateOf(Task.taskColors.random().toArgb())
     val tagColor: State<Int> = _tagColor
 
     private val _eventFlow = MutableSharedFlow<UIEvent>()

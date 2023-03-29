@@ -54,8 +54,6 @@ class MainActivity : ComponentActivity() {
                                 }
                             )
                         ) {
-                            val color = it.arguments?.getInt("taskColor") ?: -1
-
                             AddEditScreen(navController = navController)
                         }
                     }

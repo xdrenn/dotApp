@@ -5,6 +5,4 @@ class TaskUseCases (
     val getTask: GetTaskUseCase,
     val deleteTask: DeleteTaskUseCase,
     val addTask: AddTaskUseCase,
-
-){
-}
+)

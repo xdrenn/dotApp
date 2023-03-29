@@ -13,7 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,7 +46,7 @@ fun TasksScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                          navController?.navigate(Screen.AddEditScreen.route)
+                    navController.navigate(Screen.AddEditScreen.route)
                 },
                 backgroundColor = Color.LightGray
 
@@ -62,7 +64,7 @@ fun TasksScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .paint(painterResource(id = R.drawable.background),  contentScale = ContentScale.FillBounds)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -104,8 +106,10 @@ fun TasksScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                navController?.navigate(Screen.AddEditScreen.route +
-                                "?taskId={taskId}&taskColor={taskColor}")
+                                navController.navigate(
+                                    Screen.AddEditScreen.route +
+                                            "?taskId={taskId}&taskColor={taskColor}"
+                                )
                             },
 
                         onDelete = {
@@ -124,7 +128,7 @@ fun TasksScreen(
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }
-            
+
         }
     }
 }

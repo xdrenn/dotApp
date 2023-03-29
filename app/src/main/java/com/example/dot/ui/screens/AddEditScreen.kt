@@ -1,32 +1,28 @@
 package com.example.dot.ui.screens
 
 import android.annotation.SuppressLint
-import androidx.compose.animation.Animatable
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.GenericShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.dot.R
-import com.example.dot.ui.components.TransperentTextField
+import com.example.dot.ui.components.TransparentTextField
 import com.example.events.AddEditEvent
 import com.example.models.Task
 import com.example.viewModel.AddEditViewModel
@@ -79,12 +75,11 @@ fun AddEditScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.DarkGray)
-                .padding(16.dp)
+                .paint(painterResource(id = R.drawable.background2), contentScale = ContentScale.FillBounds)
         ) {
 
-                Spacer(modifier = Modifier.height(16.dp))
-            TransperentTextField(
+                Spacer(modifier = Modifier.height(20.dp))
+            TransparentTextField(
                 text = titleState.text,
                 hint = titleState.hint,
                 onValueChange = {
@@ -98,24 +93,10 @@ fun AddEditScreen(
                 textStyle = MaterialTheme.typography.h5,
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
-            TransperentTextField(
-                text = descriptionState.text,
-                hint = descriptionState.hint,
-                onValueChange = {
-                    viewModel.onEvent(AddEditEvent.EnterTask(it))
-                },
-                onFocusChange = {
-                    viewModel.onEvent(AddEditEvent.ChangeTaskFocus(it))
-                },
-                isHintVisible = descriptionState.isHintVisible,
-                singleLine = true,
-                textStyle = MaterialTheme.typography.body1
-            )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(25.dp))
             Text(
                 text = "Choose tag:",
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.h5,
                 color = Color.Black,
                 overflow = TextOverflow.Ellipsis)
 
@@ -154,6 +135,19 @@ fun AddEditScreen(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(25.dp))
+            TransparentTextField(
+                text = descriptionState.text,
+                hint = descriptionState.hint,
+                onValueChange = {
+                    viewModel.onEvent(AddEditEvent.EnterTask(it))
+                },
+                onFocusChange = {
+                    viewModel.onEvent(AddEditEvent.ChangeTaskFocus(it))
+                },
+                isHintVisible = descriptionState.isHintVisible,
+                textStyle = MaterialTheme.typography.h6
+            )
         }
     }
 }

@@ -4,8 +4,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import com.example.dot.R
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -15,17 +13,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.models.Task
 
-
-
 @Composable
 fun TaskItem(
     task: Task,
     modifier: Modifier = Modifier,
     onDelete: () -> Unit
 ) {
-   Card(modifier = modifier,
-       backgroundColor = Color.Gray
-   ) {
+    Card(
+        modifier = modifier,
+        backgroundColor = Color.hsl(0.0f, 0.32f, 0.32f, 0.3f)
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxSize()
@@ -41,13 +38,14 @@ fun TaskItem(
                 tint = Color(task.color)
             )
             Spacer(modifier = Modifier.width(5.dp))
-            Column(modifier = Modifier.width(50.dp),
-               horizontalAlignment = Alignment.Start
-            ){
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.Start
+            ) {
                 Text(
                     text = task.title,
                     style = MaterialTheme.typography.h6,
-                    color = Color.Black,
+                    color = Color.White,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.Start
@@ -56,33 +54,24 @@ fun TaskItem(
                 Text(
                     text = task.task,
                     style = MaterialTheme.typography.body1,
-                    color = Color.Black,
+                    color = Color.White,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.Start
-                )}
-            CheckBox()
-            Spacer(modifier = Modifier.width(5.dp))
-            IconButton(
-                onClick = onDelete) {
-                Icon(
-                    painter = painterResource(id = R.drawable.delete_item),
-                    contentDescription = "Delete",
-                    modifier = Modifier.size(30.dp),
-                    tint = Color.Black
                 )
+                IconButton(
+                    onClick = onDelete
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.delete_item),
+                        contentDescription = "Delete",
+                        modifier = Modifier.size(30.dp),
+                        tint = Color.Black
+                    )
+                }
             }
         }
-    }}
-
-@Composable
-fun CheckBox() {
-    val checkedState = remember { mutableStateOf(false) }
-    Checkbox(
-        checked = checkedState.value,
-        onCheckedChange = {
-            checkedState.value = it
-        }
-    )
+    }
 }
+
 

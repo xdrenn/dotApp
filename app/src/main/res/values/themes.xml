@@ -2,7 +2,8 @@
 <resources>
 
     <style name="Theme.Dot" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/dark_gray</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
 
     </style>
 </resources>

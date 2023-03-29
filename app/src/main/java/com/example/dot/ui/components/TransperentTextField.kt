@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 
 @Composable
-fun TransperentTextField (
+fun TransparentTextField (
     text: String,
     hint: String,
     modifier: Modifier = Modifier,
