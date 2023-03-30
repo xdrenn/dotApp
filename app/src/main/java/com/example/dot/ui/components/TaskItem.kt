@@ -30,16 +30,16 @@ fun TaskItem(
                 .padding(end = 10.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-
-            Icon(
-                painter = painterResource(id = R.drawable.heart_item),
-                contentDescription = "Tag",
-                modifier = Modifier.size(30.dp),
-                tint = Color(task.color)
-            )
-            Spacer(modifier = Modifier.width(5.dp))
+            Column {
+                Icon(
+                    painter = painterResource(id = R.drawable.heart_item),
+                    contentDescription = "Tag",
+                    modifier = Modifier.size(30.dp),
+                    tint = Color(task.color)
+                )
+            }
             Column(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.weight(1f).padding(start = 8.dp),
                 horizontalAlignment = Alignment.Start
             ) {
                 Text(
@@ -59,6 +59,16 @@ fun TaskItem(
                     overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.Start
                 )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = task.createdDateFormatted,
+                    style = MaterialTheme.typography.body1,
+                    color = Color.White,
+                    overflow = TextOverflow.Ellipsis,
+                    textAlign = TextAlign.Start
+                )
+            }
+            Column {
                 IconButton(
                     onClick = onDelete
                 ) {
@@ -73,5 +83,3 @@ fun TaskItem(
         }
     }
 }
-
-
