@@ -78,7 +78,7 @@ fun AddEditScreen(
                 .paint(painterResource(id = R.drawable.background2), contentScale = ContentScale.FillBounds)
         ) {
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(45.dp))
             TransparentTextField(
                 text = titleState.text,
                 hint = titleState.hint,
@@ -91,11 +91,12 @@ fun AddEditScreen(
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
                 textStyle = MaterialTheme.typography.h5,
+                modifier = Modifier.fillMaxWidth().padding(12.dp)
             )
 
-            Spacer(modifier = Modifier.height(25.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Choose tag:",
+                text = "  Choose tag:",
                 style = MaterialTheme.typography.h5,
                 color = Color.Black,
                 overflow = TextOverflow.Ellipsis)
@@ -135,7 +136,7 @@ fun AddEditScreen(
                     }
                 }
             }
-            Spacer(modifier = Modifier.height(25.dp))
+            Spacer(modifier = Modifier.height(20.dp))
             TransparentTextField(
                 text = descriptionState.text,
                 hint = descriptionState.hint,
@@ -146,7 +147,8 @@ fun AddEditScreen(
                     viewModel.onEvent(AddEditEvent.ChangeTaskFocus(it))
                 },
                 isHintVisible = descriptionState.isHintVisible,
-                textStyle = MaterialTheme.typography.h6
+                textStyle = MaterialTheme.typography.h5,
+                modifier = Modifier.fillMaxWidth().padding(12.dp)
             )
         }
     }

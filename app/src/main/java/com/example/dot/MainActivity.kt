@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(
                             route = Screen.AddEditScreen.route +
-                                    "?taskId={taskId}&taskColor={taskColor}",
+                                    "?taskId={taskId}",
                             arguments = listOf(
                                 navArgument(
                                     name = "taskId"

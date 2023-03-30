@@ -30,7 +30,7 @@ class AddEditViewModel @Inject constructor(
     val taskTitle: State<TaskTextState> = _taskTitle
 
     private val _taskDescription  = mutableStateOf(TaskTextState(
-        hint = "Task"
+        hint = "Add task"
     ))
     val taskDescription: State<TaskTextState> = _taskDescription
 
