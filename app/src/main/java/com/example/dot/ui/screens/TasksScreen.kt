@@ -108,7 +108,7 @@ fun TasksScreen(
                             .clickable {
                                 navController.navigate(
                                     Screen.AddEditScreen.route +
-                                            "?taskId={taskId}&taskColor={taskColor}"
+                                            "?taskId=${task.id}"
                                 )
                             },
 
