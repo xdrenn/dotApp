@@ -14,6 +14,7 @@ data class Task(
     val title: String,
     val task: String,
     val color: Int,
+    val completed: Boolean = false,
     val date: Long = System.currentTimeMillis()
 ) : Parcelable {
     val createdDateFormatted: String

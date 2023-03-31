@@ -42,6 +42,7 @@ fun TasksScreen(
     val scope = rememberCoroutineScope()
 
 
+
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
@@ -123,6 +124,9 @@ fun TasksScreen(
                                     viewModel.onEvent(TaskEvent.RestoreTask)
                                 }
                             }
+                        },
+                        onCheckedClick = { isChecked ->
+                           viewModel.onEvent(TaskEvent.CheckedChange(task, isChecked))
                         }
                     )
                     Spacer(modifier = Modifier.height(16.dp))

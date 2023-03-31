@@ -66,6 +66,7 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
     implementation "androidx.compose.runtime:runtime:$compose_version"
     implementation "androidx.compose.compiler:compiler:1.4.4"
+    implementation "me.saket.swipe:swipe:1.1.1"
 
 
 
@@ -90,7 +91,6 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:2.45"
     kapt "com.google.dagger:hilt-android-compiler:2.45"
-
     kapt "androidx.hilt:hilt-compiler:1.0.0"
 
     // For instrumentation tests

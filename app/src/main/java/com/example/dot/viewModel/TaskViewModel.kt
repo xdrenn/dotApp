@@ -62,6 +62,15 @@ class TaskViewModel @Inject constructor(
                   isOrderSectionVisible = !state.value.isOrderSectionVisible
               )
             }
+            is TaskEvent.CheckedChange -> {
+               viewModelScope.launch {
+                 taskUseCases.checkedChange(event.task.copy(
+                     completed = event.isCompleted
+                    )
+                 )
+               }
+
+            }
         }
     }
     private fun getTasks(orderTasks: OrderTasks){

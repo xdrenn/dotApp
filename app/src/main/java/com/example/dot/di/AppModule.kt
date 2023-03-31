@@ -24,7 +24,9 @@ class AppModule {
             app,
             TaskDatabase::class.java,
             TaskDatabase.DATABASE_NAME
-        ).build()
+        )   .fallbackToDestructiveMigration()
+            .build()
+
     }
 
     @Provides
@@ -40,7 +42,8 @@ class AppModule {
             getTasks = GetTasksUseCase(repository),
             deleteTask = DeleteTaskUseCase(repository),
             addTask = AddTaskUseCase(repository),
-            getTask = GetTaskUseCase(repository)
+            getTask = GetTaskUseCase(repository),
+            checkedChange = CheckedChangeUseCase(repository)
         )
     }
 }

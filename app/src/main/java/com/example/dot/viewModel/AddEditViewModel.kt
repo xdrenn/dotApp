@@ -40,6 +40,9 @@ class AddEditViewModel @Inject constructor(
     private val _eventFlow = MutableSharedFlow<UIEvent>()
     val eventFlow = _eventFlow.asSharedFlow()
 
+    private val _taskCompleted = mutableStateOf(false)
+    val taskCompleted: State<Boolean> = _taskCompleted
+
     private var currentTaskId: Int? = null
 
     init{
@@ -101,6 +104,7 @@ class AddEditViewModel @Inject constructor(
                          title = taskTitle.value.text,
                          task = taskDescription.value.text,
                          color = tagColor.value,
+                         completed = taskCompleted.value,
                          date = System.currentTimeMillis()
                      )
                  )

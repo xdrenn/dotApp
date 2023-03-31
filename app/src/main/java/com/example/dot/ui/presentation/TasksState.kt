@@ -7,5 +7,6 @@ import com.example.dot.utils.OrderType
 data class TasksState(
     val tasks: List<Task> = emptyList(),
     val taskOrder: OrderTasks = OrderTasks.Date(OrderType.Descending),
-    val isOrderSectionVisible: Boolean = false
+    val isOrderSectionVisible: Boolean = false,
+    val isTaskCompleted: Boolean = false
 )
