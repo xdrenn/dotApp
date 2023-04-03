@@ -34,13 +34,13 @@ fun TaskItem(
                     .padding(10.dp)
             )
                },
-        background = Color.Red,
+        background =  Color.hsl(206f, 0.55f, 0.47f),
         onSwipe = { onDelete() }
     )
     SwipeableActionsBox(endActions = listOf(delete)) {
         Card(
             modifier = modifier,
-            backgroundColor = Color.hsl(0.0f, 0.32f, 0.32f, 0.3f)
+            backgroundColor = Color.hsl(215f, 0.29f, 0.77f, 0.3f)
         ) {
             Row(
                 modifier = Modifier
@@ -56,7 +56,7 @@ fun TaskItem(
                     Icon(
                         painter = painterResource(id = R.drawable.heart_item),
                         contentDescription = "Tag",
-                        modifier = Modifier.size(30.dp),
+                        modifier = Modifier.size(28.dp),
                         tint = Color(task.color)
                     )
                 }
@@ -69,7 +69,7 @@ fun TaskItem(
                     Text(
                         text = task.title,
                         style = MaterialTheme.typography.h6,
-                        color = Color.White,
+                        color = Color.hsl(215f, 0.28f, 0.31f ),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         textAlign = TextAlign.Start
@@ -78,7 +78,7 @@ fun TaskItem(
                     Text(
                         text = task.task,
                         style = MaterialTheme.typography.body1,
-                        color = Color.White,
+                        color =  Color.hsl(215f, 0.28f, 0.31f ),
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
                         textAlign = TextAlign.Start
@@ -87,7 +87,7 @@ fun TaskItem(
                     Text(
                         text = task.createdDateFormatted,
                         style = MaterialTheme.typography.body1,
-                        color = Color.White,
+                        color =  Color.hsl(215f, 0.28f, 0.31f ),
                         overflow = TextOverflow.Ellipsis,
                         textAlign = TextAlign.Start
                     )
@@ -96,7 +96,8 @@ fun TaskItem(
                     Checkbox(
                         checked = task.completed ,
                         onCheckedChange =  onCheckedClick,
-                        colors = CheckboxDefaults.colors(checkedColor = Color.White)
+                        colors = CheckboxDefaults.colors(checkedColor = Color.hsl(215f, 0.28f, 0.77f )),
+                        modifier = Modifier.size(40.dp)
                     )
                 }
             }

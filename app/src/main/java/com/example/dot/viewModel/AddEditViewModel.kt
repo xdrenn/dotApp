@@ -41,7 +41,7 @@ class AddEditViewModel @Inject constructor(
     val eventFlow = _eventFlow.asSharedFlow()
 
     private val _taskCompleted = mutableStateOf(false)
-    val taskCompleted: State<Boolean> = _taskCompleted
+    private val taskCompleted: State<Boolean> = _taskCompleted
 
     private var currentTaskId: Int? = null
 

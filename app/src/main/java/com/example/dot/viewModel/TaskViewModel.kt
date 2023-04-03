@@ -33,11 +33,11 @@ class TaskViewModel @Inject constructor(
     }
 
     fun onEvent(event: TaskEvent) {
-        when (event){
+        when (event) {
             is TaskEvent.Order -> {
-                if(state.value.taskOrder == event.orderTasks &&
-                        state.value.taskOrder.orderType == event.orderTasks.orderType
-                ){
+                if (state.value.taskOrder == event.orderTasks &&
+                    state.value.taskOrder.orderType == event.orderTasks.orderType
+                ) {
                     return
                 }
                 getTasks(event.orderTasks)
@@ -58,18 +58,18 @@ class TaskViewModel @Inject constructor(
 
             }
             is TaskEvent.ToggleOrderSection -> {
-              _state.value = state.value.copy(
-                  isOrderSectionVisible = !state.value.isOrderSectionVisible
-              )
+                _state.value = state.value.copy(
+                    isOrderSectionVisible = !state.value.isOrderSectionVisible
+                )
             }
             is TaskEvent.CheckedChange -> {
-               viewModelScope.launch {
-                 taskUseCases.checkedChange(event.task.copy(
-                     completed = event.isCompleted
+                viewModelScope.launch {
+                    taskUseCases.checkedChange(
+                        event.task.copy(
+                            completed = event.isCompleted
+                        )
                     )
-                 )
-               }
-
+                }
             }
         }
     }

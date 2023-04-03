@@ -1,11 +1,12 @@
 package com.example.dot.models
 
+import android.annotation.SuppressLint
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.dot.ui.theme.*
 import kotlinx.parcelize.Parcelize
-import java.text.DateFormat
+import java.text.SimpleDateFormat
 
 @Parcelize
 @Entity(tableName = "task_table")
@@ -18,10 +19,11 @@ data class Task(
     val date: Long = System.currentTimeMillis()
 ) : Parcelable {
     val createdDateFormatted: String
-        get() = DateFormat.getDateTimeInstance().format(date)
+        @SuppressLint("SimpleDateFormat")
+        get() = SimpleDateFormat("HH:mm  MMM dd").format(date)
 
     companion object {
-        val taskColors = listOf(Blue, Coral, Yellow, Green, Pink, DarkPurple, LightGray, LightPink, LightBlue)
+        val taskColors = listOf(Blue, ShadowBlue, Purple, Green, DarkPurple, LightGray, LightBlue, LightPink)
     }
 }
 

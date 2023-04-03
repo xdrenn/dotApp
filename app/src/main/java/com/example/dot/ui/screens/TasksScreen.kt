@@ -13,9 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -49,23 +47,26 @@ fun TasksScreen(
                 onClick = {
                     navController.navigate(Screen.AddEditScreen.route)
                 },
-                backgroundColor = Color.LightGray
-
+                backgroundColor = Color.hsl(206f, 0.29f, 0.80f)
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.add_item),
                     contentDescription = "Add task",
-                    tint = Color.Black,
+                    tint = Color.hsl(206f, 0.29f, 0.29f),
                     modifier = Modifier.size(22.dp)
                 )
             }
 
-        }, scaffoldState = scaffoldState
+        }, scaffoldState = scaffoldState,
+           snackbarHost = {
+               SnackbarHost(it) { data ->
+                   Snackbar(contentColor = Color.White, backgroundColor = Color.Gray, actionColor = Color.White, snackbarData = data)
+               }
+           }
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .paint(painterResource(id = R.drawable.background),  contentScale = ContentScale.FillBounds)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -80,6 +81,7 @@ fun TasksScreen(
                     Icon(
                         painter = painterResource(id = R.drawable.sort),
                         contentDescription = "Sort",
+                        tint = Color.hsl(206f, 0.29f, 0.29f),
                         modifier = Modifier.size(25.dp)
                     )
                 }
@@ -132,7 +134,6 @@ fun TasksScreen(
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }
-
         }
     }
 }

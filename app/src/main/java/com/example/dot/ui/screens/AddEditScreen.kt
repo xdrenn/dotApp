@@ -1,6 +1,7 @@
 package com.example.dot.ui.screens
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,12 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.paint
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -61,11 +60,11 @@ fun AddEditScreen(
                 onClick = {
                     viewModel.onEvent(AddEditEvent.SaveTask)
                 },
-                backgroundColor = Color.LightGray
+                backgroundColor = Color.hsl(206f, 0.29f, 0.80f)
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.save_item),
-                    tint = Color.Black,
+                    tint = Color.hsl(206f, 0.29f, 0.29f),
                     contentDescription = "Save task",
                     modifier = Modifier.size(22.dp)
                 )
@@ -75,28 +74,11 @@ fun AddEditScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .paint(painterResource(id = R.drawable.background2), contentScale = ContentScale.FillBounds)
+                .background( color = Color.hsl(215f, 0.29f, 0.77f, 0.3f))
         ) {
-
-                Spacer(modifier = Modifier.height(45.dp))
-            TransparentTextField(
-                text = titleState.text,
-                hint = titleState.hint,
-                onValueChange = {
-                    viewModel.onEvent(AddEditEvent.EnterTitle(it))
-                },
-                onFocusChange = {
-                    viewModel.onEvent(AddEditEvent.ChangeTitleFocus(it))
-                },
-                isHintVisible = titleState.isHintVisible,
-                singleLine = true,
-                textStyle = MaterialTheme.typography.h5,
-                modifier = Modifier.fillMaxWidth().padding(12.dp)
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(40.dp))
             Text(
-                text = "  Choose tag:",
+                text = "  Choose color:",
                 style = MaterialTheme.typography.h5,
                 color = Color.Black,
                 overflow = TextOverflow.Ellipsis)
@@ -125,7 +107,7 @@ fun AddEditScreen(
                                     width = 3.dp,
                                     shape = heart(),
                                     color = if (viewModel.tagColor.value == colorInt) {
-                                        Color.Black
+                                        Color.hsl(228f, 0.40f, 0.20f)
                                     } else Color.Transparent
                                 ),
 
@@ -136,6 +118,21 @@ fun AddEditScreen(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(25.dp))
+            TransparentTextField(
+                text = titleState.text,
+                hint = titleState.hint,
+                onValueChange = {
+                    viewModel.onEvent(AddEditEvent.EnterTitle(it))
+                },
+                onFocusChange = {
+                    viewModel.onEvent(AddEditEvent.ChangeTitleFocus(it))
+                },
+                isHintVisible = titleState.isHintVisible,
+                singleLine = true,
+                textStyle = MaterialTheme.typography.h5,
+                modifier = Modifier.fillMaxWidth().padding(12.dp)
+            )
             Spacer(modifier = Modifier.height(20.dp))
             TransparentTextField(
                 text = descriptionState.text,
@@ -148,6 +145,7 @@ fun AddEditScreen(
                 },
                 isHintVisible = descriptionState.isHintVisible,
                 textStyle = MaterialTheme.typography.h5,
+                singleLine = true,
                 modifier = Modifier.fillMaxWidth().padding(12.dp)
             )
         }
