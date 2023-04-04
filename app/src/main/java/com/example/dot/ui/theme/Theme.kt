@@ -8,36 +8,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = Gray,
 
-
-    background = Color.White,
+    primary = Color.hsl(234f, 0.10f, 0.75f),
+    background = Color.hsl(234f, 0.10f,0.25f),
     surface = Color.DarkGray,
-    onPrimary = Color.DarkGray,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
+    onPrimary = Color.White,
+    onSecondary = Color.hsl(234f, 0.10f, 0.37f),
+    onBackground = Color.White,
+    onSurface = Color.hsl(234f, 0.10f, 0.59f),
 )
 
 private val LightColorPalette = lightColors(
-    primary = Gray,
 
-
+    primary = Color.hsl(206f, 0.29f, 0.29f),
     background = Color.White,
     surface = Color.DarkGray,
-    onPrimary = Color.DarkGray,
-    onSecondary = Color.Black,
+    onPrimary =  Color.hsl(215f, 0.28f, 0.31f ),
+    onSecondary = Color.hsl(206f, 0.29f, 0.80f),
     onBackground = Color.Black,
-    onSurface = Color.Black,
+    onSurface = Color.hsl(215f, 0.29f, 0.77f, 0.3f),
 
 )
 
 @Composable
 fun DotTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
         LightColorPalette
+    } else {
+        DarkColorPalette
     }
 
     MaterialTheme(

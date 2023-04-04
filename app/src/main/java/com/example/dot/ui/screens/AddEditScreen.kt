@@ -60,11 +60,11 @@ fun AddEditScreen(
                 onClick = {
                     viewModel.onEvent(AddEditEvent.SaveTask)
                 },
-                backgroundColor = Color.hsl(206f, 0.29f, 0.80f)
+                backgroundColor = MaterialTheme.colors.onSecondary
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.save_item),
-                    tint = Color.hsl(206f, 0.29f, 0.29f),
+                    tint = MaterialTheme.colors.primary,
                     contentDescription = "Save task",
                     modifier = Modifier.size(22.dp)
                 )
@@ -74,7 +74,7 @@ fun AddEditScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background( color = Color.hsl(215f, 0.29f, 0.77f, 0.3f))
+                .background(color = MaterialTheme.colors.onSurface)
         ) {
             Spacer(modifier = Modifier.height(40.dp))
             Text(

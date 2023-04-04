@@ -47,12 +47,12 @@ fun TasksScreen(
                 onClick = {
                     navController.navigate(Screen.AddEditScreen.route)
                 },
-                backgroundColor = Color.hsl(206f, 0.29f, 0.80f)
+                backgroundColor = MaterialTheme.colors.onSecondary
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.add_item),
                     contentDescription = "Add task",
-                    tint = Color.hsl(206f, 0.29f, 0.29f),
+                    tint = MaterialTheme.colors.primary,
                     modifier = Modifier.size(22.dp)
                 )
             }
@@ -81,7 +81,7 @@ fun TasksScreen(
                     Icon(
                         painter = painterResource(id = R.drawable.sort),
                         contentDescription = "Sort",
-                        tint = Color.hsl(206f, 0.29f, 0.29f),
+                        tint = MaterialTheme.colors.primary,
                         modifier = Modifier.size(25.dp)
                     )
                 }

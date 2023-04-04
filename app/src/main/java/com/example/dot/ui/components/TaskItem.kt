@@ -40,7 +40,7 @@ fun TaskItem(
     SwipeableActionsBox(endActions = listOf(delete)) {
         Card(
             modifier = modifier,
-            backgroundColor = Color.hsl(215f, 0.29f, 0.77f, 0.3f)
+            backgroundColor = MaterialTheme.colors.onSurface
         ) {
             Row(
                 modifier = Modifier
@@ -69,7 +69,7 @@ fun TaskItem(
                     Text(
                         text = task.title,
                         style = MaterialTheme.typography.h6,
-                        color = Color.hsl(215f, 0.28f, 0.31f ),
+                        color = MaterialTheme.colors.onPrimary,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         textAlign = TextAlign.Start
@@ -78,7 +78,7 @@ fun TaskItem(
                     Text(
                         text = task.task,
                         style = MaterialTheme.typography.body1,
-                        color =  Color.hsl(215f, 0.28f, 0.31f ),
+                        color = MaterialTheme.colors.onPrimary,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
                         textAlign = TextAlign.Start
@@ -87,7 +87,7 @@ fun TaskItem(
                     Text(
                         text = task.createdDateFormatted,
                         style = MaterialTheme.typography.body1,
-                        color =  Color.hsl(215f, 0.28f, 0.31f ),
+                        color = MaterialTheme.colors.onPrimary,
                         overflow = TextOverflow.Ellipsis,
                         textAlign = TextAlign.Start
                     )
@@ -96,7 +96,7 @@ fun TaskItem(
                     Checkbox(
                         checked = task.completed ,
                         onCheckedChange =  onCheckedClick,
-                        colors = CheckboxDefaults.colors(checkedColor = Color.hsl(215f, 0.28f, 0.77f )),
+                        colors = CheckboxDefaults.colors(checkedColor = Color.hsl(215f, 0.28f, 0.77f ), uncheckedColor = Color.White),
                         modifier = Modifier.size(40.dp)
                     )
                 }
